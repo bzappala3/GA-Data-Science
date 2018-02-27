@@ -1,0 +1,19 @@
+Problem statement:
+Which plan has the best rate for the number of benefits and network options across each state?
+
+Hypotheses:
+The lower the rate and the higher the number of benefits and network, the better the plan.
+
+Goals and success metrics:
+  - Predict price for each plan
+  - Predict number of benefits for each plan
+  - Predict number of networks for each plan
+  - Compare price to number of benefts and networks across each state
+  - Final result: list of best plan for each state where best is defined by a plan with the lowest rate and the highest number of benefits and networks
+
+Risks or limitations:
+  - Rate changes depending on number of people insured (family vs single)
+  - Number of benefits might not be the best metric - it would be better to quantify the benefits in $ saved by plan.
+
+Approach:
+The data sets that will be needed to answer this question are Rate.csv, BenefitCostSharing.csv and Network.csv. Just by analyzing Network file, we can obtain metrics such as number of providers available per state. We can join Network to Rate by joining on IssuerId and IssuerID2 too. We can join Rate with BenefitCostSharing on IssueId and IssueId2. In Rate file we can obtain the rates for individuals, couple, subscribers with dependents, etc across states. We can also use this information to analyze which plan is cheaper per person insured.
